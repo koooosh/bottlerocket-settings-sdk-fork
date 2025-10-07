@@ -96,6 +96,7 @@ pub struct KubernetesSettingsV1 {
     node_ip: IpAddr,
     pod_infra_container_image: SingleLineString,
     hostname_override: ValidLinuxHostname,
+    image_maximum_gc_age: KubernetesDurationValue,
 }
 
 type Result<T> = std::result::Result<T, Infallible>;
@@ -199,6 +200,7 @@ mod test {
                 device_ownership_from_security_context: None,
                 single_process_oom_kill: None,
                 static_pods_enabled: None,
+                image_maximum_gc_age: None,
             })
         );
     }
