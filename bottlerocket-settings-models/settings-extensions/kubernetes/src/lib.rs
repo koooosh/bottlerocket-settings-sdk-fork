@@ -98,6 +98,7 @@ pub struct KubernetesSettingsV1 {
     hostname_override: ValidLinuxHostname,
     image_maximum_gc_age: KubernetesDurationValue,
     ids_per_pod: KubernetesIdsPerPodValue,
+    max_parallel_image_pulls: i32,
 }
 
 type Result<T> = std::result::Result<T, Infallible>;
@@ -203,6 +204,7 @@ mod test {
                 static_pods_enabled: None,
                 image_maximum_gc_age: None,
                 ids_per_pod: None,
+                max_parallel_image_pulls: None,
             })
         );
     }
