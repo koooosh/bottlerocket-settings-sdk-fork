@@ -97,6 +97,7 @@ pub struct KubernetesSettingsV1 {
     pod_infra_container_image: SingleLineString,
     hostname_override: ValidLinuxHostname,
     image_maximum_gc_age: KubernetesDurationValue,
+    image_minimum_gc_age: KubernetesDurationValue,
     ids_per_pod: KubernetesIdsPerPodValue,
     max_parallel_image_pulls: i32,
 }
@@ -203,6 +204,7 @@ mod test {
                 single_process_oom_kill: None,
                 static_pods_enabled: None,
                 image_maximum_gc_age: None,
+                image_minimum_gc_age: None,
                 ids_per_pod: None,
                 max_parallel_image_pulls: None,
             })
